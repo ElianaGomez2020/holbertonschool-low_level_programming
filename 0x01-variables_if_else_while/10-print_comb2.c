@@ -18,7 +18,7 @@ int main(void)
 			if (num1 != 57 || num2 != 57)
 				putchar(',');
 				putchar(' ');
-		} 
+		}
 	}
 	putchar('\n');
 	return (0);
