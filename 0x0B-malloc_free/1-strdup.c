@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ *_strdup - function
+ *@str: char
+ *Return: 0
+ */
+
+
 char *_strdup(char *str)
 {
 	unsigned int len = 0, len1 = 0;
