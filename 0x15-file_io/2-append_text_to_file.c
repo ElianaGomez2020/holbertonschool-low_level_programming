@@ -2,30 +2,23 @@
 /**
  * append_text_to_file - appends text at the end of a file.
  * @filename: is the name of the file
- * @text_content:  is the NULL 
- * Return: 
+ * @text_content:  is the NULL
+ * Return: 1
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file_desc = 0, lenght = 0;
+	int fd = 0, l;
 
 	if (!filename)
 		return (-1);
-
 	if (text_content)
 	{
-		while (text_content[lenght])
-		{
-			lenght++;
-		}
+		for (l = 0; text_content[l] != '\0'; l++)
+			;
 	}
-
-	file_desc = open(filename, O_WRONLY | O_APPEND);
-
-	if (file_desc < 0)
+	fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd < 0)
 		return (-1);
-
-	write(file_desc, text_content, lenght);
-
+	write(fd, text_content, l);
 	return (1);
 }
